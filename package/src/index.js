@@ -1,3 +1,7 @@
-module.exports.findFnWith = () => ({
-  invoke: () => { throw new Error('not implemented'); },
-});
+module.exports.findFnWith = (capabilities) => {
+  if (!capabilities) {
+    throw new Error('no capabilities have been provided');
+  }
+
+  return () => {};
+};
