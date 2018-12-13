@@ -16,7 +16,7 @@ module.exports.findFnWith = (capabilities, context = 'some app') => {
       throw new Error('no function found with requested capabilities');
     }
 
-    const { name, version } = result;
+    const { name, qualifier } = result;
 
     if (logFn) {
       logFn('building params...');
@@ -30,8 +30,8 @@ module.exports.findFnWith = (capabilities, context = 'some app') => {
       Payload: data ? JSON.stringify(data) : '',
     };
 
-    if (version) {
-      params.Qualifier = version;
+    if (qualifier) {
+      params.Qualifier = qualifier;
     }
 
     if (logFn) {
